@@ -5,7 +5,7 @@ We build practical tools around hypervisors, OS internals, telemetry, malware la
 
 Two people behind Nullbit1:
 
-* @wythwooд
+* @wythwool
 * @froghtwaserror
 
 We use a lot of languages when it makes sense for the problem. Favorites:
