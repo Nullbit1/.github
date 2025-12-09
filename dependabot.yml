@@ -1,0 +1,19 @@
+# This file can be used as a template for Dependabot config in Nullbit1 repos.
+# Copy it into .github/dependabot.yml inside a specific repository to enable it there.
+
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "cargo"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  - package-ecosystem: "gomod"
+    directory: "/"
+    schedule:
+      interval: "weekly"

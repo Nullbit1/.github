@@ -1,0 +1,37 @@
+name: Reusable security scan
+
+on:
+  workflow_call:
+    inputs:
+      languages:
+        description: >
+          Comma-separated list of CodeQL languages, e.g. 'cpp,go,python'.
+        required: true
+        type: string
+
+jobs:
+  codeql:
+    name: CodeQL analysis
+    runs-on: ubuntu-latest
+
+    permissions:
+      security-events: write
+      actions: read
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ inputs.languages }}
+
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v3
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/org-reusable"
