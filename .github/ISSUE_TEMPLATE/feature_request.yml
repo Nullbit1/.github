@@ -1,0 +1,47 @@
+name: Feature request
+description: Suggest an idea or improvement for a Nullbit1 project.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Feature requests are welcome, especially if they are backed by a real-world use case.
+  - type: input
+    id: project
+    attributes:
+      label: Project
+      description: Which repo/project is this about?
+      placeholder: e.g. AegisHV, SentraCore, VolGuard
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What problem are you trying to solve?
+      placeholder: When analysing large dumps, it is hard to quickly filter out noise...
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: How would you like the tool to behave? The more concrete, the better.
+      placeholder: |
+        I would like a new subcommand `volguard filter` that...
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: Have you considered any alternative solutions or workarounds?
+    validations:
+      required: false
+  - type: checkboxes
+    id: extra
+    attributes:
+      label: Extra
+      options:
+        - label: I am willing to work on a PR for this.
+          required: false
